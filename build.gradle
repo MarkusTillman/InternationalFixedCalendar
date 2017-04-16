@@ -1,0 +1,51 @@
+group 'com.international.fixed.calendar'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'joda-time', name: 'joda-time', version: '+'
+    compile group: 'com.google.guava', name: 'guava', version: '+'
+
+    testCompile group: 'junit', name: 'junit', version: '+'
+    testCompile 'org.assertj:assertj-core:+'
+    //testCompile 'org.joda-time:joda-time:+'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+    test {
+        java {
+            srcDir 'test'
+        }
+    }
+}
+
+/*
+jar {
+    from sourceSets
+}
+*/
+/*jar {
+    manifest {
+        attributes 'Main-class': 'com.international.fixed.calendar.Main'
+    }
+/* baseName = project.name + '-all'
+ from {
+     configurations.compile.collect {
+         it.isDirectory() ? it : zipTree(it)
+     }
+ }
+ with jar */
+//}
